@@ -20,10 +20,10 @@ public class LoginTests extends TestBase {
     }
 
     @Test
-    public void positiveTest() throws InterruptedException {
+    public void positiveTest() {
         User user = new User().setEmail(email).setPassword(password);
-        app.getHelperUser().openLoginForm();
-        app.getHelperUser().fillLoginForm(user);
+        app.getHelperUser().openLoginRegistrationForm();
+        app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitLoginForm();
         Assert.assertTrue(app.getHelperUser().isLoggedIn());
 
@@ -32,24 +32,24 @@ public class LoginTests extends TestBase {
 
     @Test
     public void loginWrongEmail(){
-        app.getHelperUser().openLoginForm();
-        app.getHelperUser().fillLoginForm("estuser@test.com",password);
+        app.getHelperUser().openLoginRegistrationForm();
+        app.getHelperUser().fillLoginRegistrationForm("estuser@test.com",password);
         app.getHelperUser().submitLoginForm();
         Assert.assertTrue(app.getHelperUser().isAlertPresent("Wrong email or password"));
     }
 
     @Test
     public void loginWrongPassword(){
-        app.getHelperUser().openLoginForm();
-        app.getHelperUser().fillLoginForm(email,"aaA1234");
+        app.getHelperUser().openLoginRegistrationForm();
+        app.getHelperUser().fillLoginRegistrationForm(email,"aaA1234");
         app.getHelperUser().submitLoginForm();
         Assert.assertTrue(app.getHelperUser().isAlertPresent("Wrong email or password"));
     }
 
     @Test
     public void loginUnregisteredUser(){
-        app.getHelperUser().openLoginForm();
-        app.getHelperUser().fillLoginForm('1'+email,password+'1');
+        app.getHelperUser().openLoginRegistrationForm();
+        app.getHelperUser().fillLoginRegistrationForm('1'+email,password+'1');
         app.getHelperUser().submitLoginForm();
         Assert.assertTrue(app.getHelperUser().isAlertPresent("Wrong email or password"));
     }

@@ -1,9 +1,14 @@
 package manager;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.nio.charset.Charset;
+import java.time.Duration;
 import java.util.List;
 
 public class HelperBase {
@@ -36,6 +41,47 @@ public class HelperBase {
             Thread.sleep(time);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public String getErrorMessage() {
+
+        WebElement error = new WebDriverWait(wd, Duration.ofSeconds(10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".login_login__3EHKB>div")));
+        return error.getText();
+    }
+
+
+    public boolean isAlertPresent(String message) {
+        Alert alert = new WebDriverWait(wd, Duration.ofSeconds(10))
+                .until(ExpectedConditions.alertIsPresent());
+        if (alert != null && alert.getText().contains(message)) {
+            // System.out.println(alert.getText());
+            //click OK -->alert.accept();
+            // click cancel -->alert.dismiss();
+            //type into alert -->alert.sendKeys("text");
+            //pause(2000);
+            alert.accept();
+            return true;
+        }
+        return false;
+    }
+//
+//    public String getAlertMessage() {
+//        Alert alert = new WebDriverWait(wd, Duration.ofSeconds(10))
+//                .until(ExpectedConditions.alertIsPresent());
+//        if (alert != null)
+//            return alert.getText();
+//        return "";
+//
+//    }
+
+
+    public void closeAlert() {
+        Alert alert = new WebDriverWait(wd, Duration.ofSeconds(1))
+                .until(ExpectedConditions.alertIsPresent());
+        if(alert!=null){
+            alert.dismiss();
         }
     }
 }
