@@ -1,18 +1,17 @@
 package tests;
 
 import manager.ApplicationManager;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
 public class TestBase {
     static ApplicationManager app = new ApplicationManager();
 
-    @BeforeSuite
+    @BeforeMethod
     public void setUp() {
         app.init();
     }
 
-    @AfterSuite
+    @AfterMethod
     public void tearDown() {
         app.stop();
     }

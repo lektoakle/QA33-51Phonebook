@@ -21,7 +21,10 @@ public class LoginTests extends TestBase {
 
     @Test
     public void positiveTest() {
-        User user = new User().setEmail(email).setPassword(password);
+        User user = User.builder()
+                .email(email)
+                .password(password)
+                .build();
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitLoginForm();
@@ -51,6 +54,7 @@ public class LoginTests extends TestBase {
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm('1'+email,password+'1');
         app.getHelperUser().submitLoginForm();
+
         Assert.assertTrue(app.getHelperUser().isAlertPresent("Wrong email or password"));
     }
 

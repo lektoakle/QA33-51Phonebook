@@ -20,7 +20,10 @@ public class RegistrationTests extends TestBase {
         Random random = new Random();
         int z = (int) ((System.currentTimeMillis() / 1000) % 3600);
 
-        User user = new User().setEmail("fhdjrhfj" + z + "@gmail.com").setPassword("aAsS23$$$$");
+        User user = User.builder()
+                .email("fhdjrhfj" + z + "@gmail.com")
+                .password("aAsS23$$$$")
+                .build();
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistrationForm();
@@ -32,7 +35,10 @@ public class RegistrationTests extends TestBase {
     @Test
     public void testRegistrationWrongEmail() {
 
-        User user = new User().setEmail("fhdjrhfjgmail.com").setPassword("aAsS23$$$$");
+        User user = User.builder()
+                .email("fhdjrhfjgmail.com")
+                .password("aAsS23$$$$")
+                .build();
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistrationForm();
@@ -50,7 +56,10 @@ public class RegistrationTests extends TestBase {
     @Test
     public void testRegistrationEmptyEmail() {
 
-        User user = new User().setEmail("").setPassword("aAsS23$$$$");
+        User user = User.builder()
+                .email("")
+                .password("aAsS23$$$$")
+                .build();
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistrationForm();
@@ -68,7 +77,10 @@ public class RegistrationTests extends TestBase {
 //        Random random = new Random();
         int z = (int) ((System.currentTimeMillis() / 1000) % 3600);
 
-        User user = new User().setEmail("fsdgasdg" + z + "@gmail.com").setPassword("as23$$$$");
+        User user = User.builder()
+                .email("fsdgasdg" + z + "@gmail.com")
+                .password("as23$$$$")
+                .build();
 
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
@@ -83,7 +95,10 @@ public class RegistrationTests extends TestBase {
     @Test
     public void testRegistrationEmptyPassword() {
 
-        User user = new User().setEmail("fhdjsdfsrhfj@gmail.com").setPassword("");
+        User user = User.builder()
+                .email("fhdjsdfsrhfj@gmail.com")
+                .password("")
+                .build();
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistrationForm();
@@ -96,7 +111,10 @@ public class RegistrationTests extends TestBase {
 
     @Test
     public void testRegistrationRegisteredUser() {
-        User user = new User().setEmail("testuser@test.com").setPassword("aaA1234#");
+        User user = User.builder()
+                .email("testuser@test.com")
+                .password("aaA1234#")
+                .build();
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistrationForm();
@@ -110,7 +128,9 @@ public class RegistrationTests extends TestBase {
 
     @Test
     public void testRegisteredUserNewPassword() {
-        User user = new User().setEmail("testuser@test.com").setPassword("aaA1234??");
+        User user = User.builder()
+                .email("testuser@test.com")
+                .password("aaA1234??").build();
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistrationForm();
