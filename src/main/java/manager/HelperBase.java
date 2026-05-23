@@ -23,7 +23,7 @@ public class HelperBase {
         field.sendKeys(data);
     }
 
-    public void clearNew(WebElement element){
+    public void clearNew(WebElement element) {
         String os = System.getProperty("os.name");
 //        System.out.println(os);
 
@@ -31,10 +31,10 @@ public class HelperBase {
         element.sendKeys(" ");
 //        element.sendKeys(Keys.BACK_SPACE);
 
-        if(os.startsWith("Win")||os.startsWith("Lin")){
-            element.sendKeys(Keys.CONTROL,"a");
-        }else {
-            element.sendKeys(Keys.COMMAND,"a");
+        if (os.startsWith("Win") || os.startsWith("Lin")) {
+            element.sendKeys(Keys.CONTROL, "a");
+        } else {
+            element.sendKeys(Keys.COMMAND, "a");
         }
         element.sendKeys(Keys.DELETE);
     }
@@ -93,7 +93,7 @@ public class HelperBase {
     public void closeAlert() {
         Alert alert = new WebDriverWait(wd, Duration.ofSeconds(1))
                 .until(ExpectedConditions.alertIsPresent());
-        if(alert!=null){
+        if (alert != null) {
             alert.dismiss();
         }
     }

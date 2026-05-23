@@ -24,6 +24,7 @@ public class RegistrationTests extends TestBase {
                 .email("fhdjrhfj" + z + "@gmail.com")
                 .password("aAsS23$$$$")
                 .build();
+        logger.info("Test data: " + user);
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistrationForm();
@@ -39,6 +40,7 @@ public class RegistrationTests extends TestBase {
                 .email("fhdjrhfjgmail.com")
                 .password("aAsS23$$$$")
                 .build();
+        logger.info("Test data: " + user);
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistrationForm();
@@ -60,6 +62,7 @@ public class RegistrationTests extends TestBase {
                 .email("")
                 .password("aAsS23$$$$")
                 .build();
+        logger.info("Test data: " + user);
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistrationForm();
@@ -81,7 +84,7 @@ public class RegistrationTests extends TestBase {
                 .email("fsdgasdg" + z + "@gmail.com")
                 .password("as23$$$$")
                 .build();
-
+        logger.info("Test data: " + user);
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistrationForm();
@@ -99,6 +102,7 @@ public class RegistrationTests extends TestBase {
                 .email("fhdjsdfsrhfj@gmail.com")
                 .password("")
                 .build();
+        logger.info("Test data: " + user);
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistrationForm();
@@ -115,6 +119,7 @@ public class RegistrationTests extends TestBase {
                 .email("testuser@test.com")
                 .password("aaA1234#")
                 .build();
+        logger.info("Test data: " + user);
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistrationForm();
@@ -131,6 +136,7 @@ public class RegistrationTests extends TestBase {
         User user = User.builder()
                 .email("testuser@test.com")
                 .password("aaA1234??").build();
+        logger.info("Test data: " + user);
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistrationForm();

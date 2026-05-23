@@ -38,8 +38,10 @@ public class AddNewContactTests extends TestBase {
                 .address("F")
                 .description("F")
                 .build();
+        logger.info("Test data: " + contact);
         app.getHelperContact().openAddNewContactForm();
         app.getHelperContact().fillAddNewContactForm(contact);
+        app.getHelperContact().getScreen("src/test/screenshots/screen" + i + ".png");
         app.getHelperContact().submitAddNewContactForm();
         Assert.assertTrue(app.getHelperContact().isContactAdded(contact));
     }
@@ -59,6 +61,7 @@ public class AddNewContactTests extends TestBase {
                 .address("F")
                 .description("")
                 .build();
+        logger.info("Test data: " + contact);
         app.getHelperContact().openAddNewContactForm();
         app.getHelperContact().fillAddNewContactForm(contact);
         app.getHelperContact().submitAddNewContactForm();
@@ -80,6 +83,7 @@ public class AddNewContactTests extends TestBase {
                 .address("F")
                 .description("F")
                 .build();
+        logger.info("Test data: " + contact);
         app.getHelperContact().openAddNewContactForm();
         app.getHelperContact().fillAddNewContactForm(contact);
         app.getHelperContact().submitAddNewContactForm();
@@ -103,6 +107,7 @@ public class AddNewContactTests extends TestBase {
                 .address("F")
                 .description("F")
                 .build();
+        logger.info("Test data: " + contact);
         app.getHelperContact().openAddNewContactForm();
         app.getHelperContact().fillAddNewContactForm(contact);
         app.getHelperContact().submitAddNewContactForm();
@@ -125,6 +130,7 @@ public class AddNewContactTests extends TestBase {
                 .address("F")
                 .description("F")
                 .build();
+        logger.info("Test data: " + contact);
 
         app.getHelperContact().openAddNewContactForm();
         app.getHelperContact().fillAddNewContactForm(contact);
@@ -149,6 +155,7 @@ public class AddNewContactTests extends TestBase {
                 .address("F")
                 .description("F")
                 .build();
+        logger.info("Test data: " + contact);
         app.getHelperContact().openAddNewContactForm();
         app.getHelperContact().fillAddNewContactForm(contact);
         app.getHelperContact().submitAddNewContactForm();
@@ -181,6 +188,8 @@ public class AddNewContactTests extends TestBase {
                 .description("F")
                 .build();
 
+        logger.info("Test data first contact: " + contact);
+        logger.info("Test data repeated contact: " + contact2);
         app.getHelperContact().openAddNewContactForm();
         app.getHelperContact().fillAddNewContactForm(contact);
         app.getHelperContact().submitAddNewContactForm();
@@ -210,6 +219,7 @@ public class AddNewContactTests extends TestBase {
                 .address("F")
                 .description("F")
                 .build();
+        logger.info("Test data: " + contact);
         app.getHelperContact().openAddNewContactForm();
         app.getHelperContact().fillAddNewContactForm(contact);
         app.getHelperContact().submitAddNewContactForm();
@@ -233,6 +243,7 @@ public class AddNewContactTests extends TestBase {
                 .description("F")
                 .build();
 
+        logger.info("Test data: " + contact);
         app.getHelperContact().openAddNewContactForm();
         app.getHelperContact().fillAddNewContactForm(contact);
         app.getHelperContact().submitAddNewContactForm();
@@ -264,6 +275,8 @@ public class AddNewContactTests extends TestBase {
                 .description("F")
                 .build();
 
+        logger.info("Test data first contact: " + contact);
+        logger.info("Test data repeated contact: " + contact);
         app.getHelperContact().openAddNewContactForm();
         app.getHelperContact().fillAddNewContactForm(contact);
         app.getHelperContact().submitAddNewContactForm();
@@ -292,6 +305,8 @@ public class AddNewContactTests extends TestBase {
                 .address("")
                 .description("F")
                 .build();
+
+        logger.info("Test data: " + contact);
         app.getHelperContact().openAddNewContactForm();
         app.getHelperContact().fillAddNewContactForm(contact);
         app.getHelperContact().submitAddNewContactForm();

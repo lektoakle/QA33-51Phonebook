@@ -1,9 +1,12 @@
 package manager;
 
+import com.google.common.io.Files;
 import models.Contact;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+
+import java.io.File;
+import java.io.IOException;
+
 
 public class HelperContact extends HelperBase {
     public HelperContact(WebDriver wd) {
@@ -30,8 +33,8 @@ public class HelperContact extends HelperBase {
 
     public boolean isContactAdded(Contact contact) {
         openContacts();
-        return isElementPresent(By.xpath("//div/h2[text()='"+contact.getName()+"']"))
-                && isElementPresent(By.xpath("//div/h3[text()='"+contact.getPhone()+"']"));
+        return isElementPresent(By.xpath("//div/h2[text()='" + contact.getName() + "']"))
+                && isElementPresent(By.xpath("//div/h3[text()='" + contact.getPhone() + "']"));
 
 
     }
@@ -49,5 +52,15 @@ public class HelperContact extends HelperBase {
     public boolean isAddButtonSelected() {
         WebElement addButton = wd.findElement(By.xpath("//a[@href='/add']"));
         return !addButton.isSelected();
+    }
+
+    public void getScreen(String filepath) {
+        TakesScreenshot takesScreenshot = (TakesScreenshot) wd;
+        File tmp = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        try {
+            Files.copy(tmp, new File(filepath));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
