@@ -6,6 +6,8 @@ import org.openqa.selenium.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
+import java.util.Random;
 
 
 public class HelperContact extends HelperBase {
@@ -15,6 +17,7 @@ public class HelperContact extends HelperBase {
 
     public void openAddNewContactForm() {
         click(By.xpath("//a[@href='/add']"));
+        logger.info("tried to open new contact form");
     }
 
     public void fillAddNewContactForm(Contact contact) {
@@ -62,5 +65,68 @@ public class HelperContact extends HelperBase {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void provideContacts() {
+        while (getContactsListSize() < 3) {
+            Random random = new Random();
+            int z = (int) ((System.currentTimeMillis() / 1000) % 3600);
+            Contact contact = Contact.builder()
+                    .name("1A")
+                    .lastName("1b")
+                    .email("sdfasdf" + z + "@mail.com")
+                    .phone(z + "2323423423")
+                    .address("asdf")
+                    .description("")
+                    .build();
+            addContact(contact);
+        }
+    }
+
+
+    private void addContact(Contact contact) {
+        openAddNewContactForm();
+        fillAddNewContactForm(contact);
+        submitAddNewContactForm();
+    }
+
+    public List<WebElement> getContactsList() {
+//        openContacts();
+        return wd.findElements(By.xpath("//div[contains(@class,'contact-item_card')]"));
+
+    }
+
+    public int getContactsListSize() {
+        return getContactsList().size();
+    }
+
+    public void removeCurrentContact() {
+        WebElement removeButton = wd.findElement(By.xpath("//button[text()='Remove']"));
+        removeButton.click();
+    }
+
+    public void removeFirstContact() {
+        WebElement firstContact = wd.findElement(By.xpath("//div[contains(@class,'contact-item_card')]"));
+        firstContact.click();
+        WebElement removeButton = wd.findElement(By.xpath("//button[text()='Remove']"));
+        removeButton.click();
+
+    }
+
+    public void removeAllContacts() {
+        By locator = By.xpath("//div[contains(@class,'contact-item_card')]");
+        while (isElementPresent(locator)) {
+            removeFirstContact();
+            pause(10000);
+//TODO get rid of the pause
+
+//        while (getContactsListSize() > 0) {
+//            removeFirstContact();
+        }
+
+    }
+
+    public boolean isNoContactsMessagePresent() {
+        return isElementPresent(By.xpath(("//div/h1[text()=' No Contacts here!']")));
     }
 }

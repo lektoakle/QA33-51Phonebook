@@ -1,0 +1,54 @@
+2741 INFO  manager.ApplicationManager -- All tests run in Chrome browser
+3846 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+3854 INFO  tests.TestBase -- Test name: AddNewContactAllFieldsPositiveTest
+9558 INFO  tests.TestBase -- Test data: Contact(name=Emma, lastName=Smith, email=emma1280@gmail.com, phone=452234662392340, address=F, description=F)
+10809 INFO  manager.HelperBase -- tried to open new contact form
+14999 INFO  manager.ApplicationManager -- All tests run in Chrome browser
+16259 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+16269 INFO  tests.TestBase -- Test name: AddNewContactEmptyEmailFieldsNegativeTest
+21930 INFO  tests.TestBase -- Test data: Contact(name=Emma, lastName=Smith, email=, phone=452234662365238, address=F, description=F)
+23182 INFO  manager.HelperBase -- tried to open new contact form
+36323 INFO  manager.ApplicationManager -- All tests run in Chrome browser
+37068 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+37075 INFO  tests.TestBase -- Test name: AddNewContactEmptyLastNameFieldNegativeTest
+42737 INFO  tests.TestBase -- Test data: Contact(name=Emma, lastName=, email=emma1916@gmail.com, phone=452234662365252, address=F, description=F)
+44003 INFO  manager.HelperBase -- tried to open new contact form
+47065 INFO  manager.ApplicationManager -- All tests run in Chrome browser
+47968 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+47972 INFO  tests.TestBase -- Test name: AddNewContactEmptyNameFieldNegativeTest
+53643 INFO  tests.TestBase -- Test data: Contact(name=, lastName=Smith, email=emma1636@gmail.com, phone=452234662387098, address=F, description=F)
+54773 INFO  manager.HelperBase -- tried to open new contact form
+57838 INFO  manager.ApplicationManager -- All tests run in Chrome browser
+59001 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+59009 INFO  tests.TestBase -- Test name: AddNewContactEmptyPhoneFieldNegativeTest
+64640 INFO  tests.TestBase -- Test data: Contact(name=Emma, lastName=Smith, email=emma1976@gmail.com, phone=, address=F, description=F)
+65795 INFO  manager.HelperBase -- tried to open new contact form
+69264 INFO  manager.ApplicationManager -- All tests run in Chrome browser
+70394 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+70399 INFO  tests.TestBase -- Test name: AddNewContactInvalidEmailFieldNegativeTest
+76044 INFO  tests.TestBase -- Test data: Contact(name=Emma, lastName=Smith, email=emma1326gmail.com, phone=452234662344296, address=F, description=F)
+77206 INFO  manager.HelperBase -- tried to open new contact form
+80656 INFO  manager.ApplicationManager -- All tests run in Chrome browser
+81478 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+81484 INFO  tests.TestBase -- Test name: AddNewContactInvalidPhoneFieldNegativeTest
+87120 INFO  tests.TestBase -- Test data: Contact(name=Emma, lastName=Smith, email=emma1219@gmail.com, phone=123456, address=F, description=F)
+88314 INFO  manager.HelperBase -- tried to open new contact form
+91709 INFO  manager.ApplicationManager -- All tests run in Chrome browser
+92721 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+92725 INFO  tests.TestBase -- Test name: AddNewContactRepeatedEmailFieldNegativeTest
+98402 INFO  tests.TestBase -- Test data first contact: Contact(name=Emma, lastName=Smith, email=emma1769@gmail.com, phone=452234662362532, address=F, description=F)
+98403 INFO  tests.TestBase -- Test data repeated contact: Contact(name=Anna, lastName=Green, email=emma1769@gmail.com, phone=625324522346623, address=F, description=F)
+99783 INFO  manager.HelperBase -- tried to open new contact form
+101639 INFO  manager.HelperBase -- tried to open new contact form
+114532 INFO  manager.ApplicationManager -- All tests run in Chrome browser
+115366 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+115369 INFO  tests.TestBase -- Test name: AddNewContactRepeatedPhoneFieldNegativeTest
+121066 INFO  tests.TestBase -- Test data first contact: Contact(name=, lastName=Smith, email=emma1081@gmail.com, phone=452234662383802, address=F, description=F)
+121067 INFO  tests.TestBase -- Test data repeated contact: Contact(name=, lastName=Smith, email=emma1081@gmail.com, phone=452234662383802, address=F, description=F)
+122317 INFO  manager.HelperBase -- tried to open new contact form
+123491 INFO  manager.HelperBase -- tried to open new contact form
+136401 INFO  manager.ApplicationManager -- All tests run in Chrome browser
+137379 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+137383 INFO  tests.TestBase -- Test name: AddNewContactRequiredFieldsOnlyPositiveTest
+143025 INFO  tests.TestBase -- Test data: Contact(name=Emma, lastName=Smith, email=emma1220@gmail.com, phone=452234662312039, address=F, description=)
+144318 INFO  manager.HelperBase -- tried to open new contact form
