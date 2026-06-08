@@ -1,31 +1,35 @@
 package tests;
 
 
+import manager.DataProviderUser;
 import models.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 
 public class LoginTests extends TestBase {
-
+//
     String email = "testuser@test.com";
     String password = "aaA1234#";
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void preCondition() {
         if (app.getHelperUser().isLoggedIn()) {
             app.getHelperUser().logOut();
         }
     }
 
-    @Test
-    public void loginPositiveTest() {
-        logger.info("Test data: " + email + ", " + password);
-        User user = User.builder()
-                .email(email)
-                .password(password)
-                .build();
+
+    @Test(groups = "smoke", dataProvider = "loginFile", dataProviderClass = DataProviderUser.class)
+    public void loginPositiveTest(User user) {
+        logger.info("Test data: " + user);
+
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitLoginForm();
@@ -35,7 +39,7 @@ public class LoginTests extends TestBase {
 
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void loginWrongEmail() {
         logger.info("Test data: " + "estuser@test.com" + ", " + password);
 

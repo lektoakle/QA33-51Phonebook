@@ -1,7 +1,0 @@
-2750 INFO  manager.ApplicationManager -- All tests run in Chrome browser
-3564 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
-3573 INFO  tests.TestBase -- Test name: removeAllContacts
-11030 INFO  manager.HelperBase -- tried to open new contact form
-12976 INFO  manager.HelperBase -- tried to open new contact form
-14654 INFO  manager.HelperBase -- tried to open new contact form
-16334 INFO  manager.HelperBase -- tried to open new contact form

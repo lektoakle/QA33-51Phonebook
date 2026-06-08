@@ -9,13 +9,13 @@ import org.testng.annotations.Test;
 import java.util.Random;
 
 public class RegistrationTests extends TestBase {
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void precondition() {
         if (app.getHelperUser().isLoggedIn())
             app.getHelperUser().logOut();
     }
 
-    @Test
+    @Test(groups = "smoke")
     public void testRegistrationPositive() {
         Random random = new Random();
         int z = (int) ((System.currentTimeMillis() / 1000) % 3600);
@@ -33,7 +33,7 @@ public class RegistrationTests extends TestBase {
 
     }
 
-    @Test
+    @Test(groups = "smoke")
     public void testRegistrationWrongEmail() {
 
         User user = User.builder()

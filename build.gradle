@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.testing.Test
+
 plugins {
     id 'java'
 }
@@ -14,13 +16,40 @@ dependencies {
     implementation("org.testng:testng:7.12.0")
     implementation 'ch.qos.logback:logback-classic:1.5.13'
 
-    compileOnly 'org.projectlombok:lombok:1.18.28'
-    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
 
-    testCompileOnly 'org.projectlombok:lombok:1.18.28'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
+    testCompileOnly 'org.projectlombok:lombok:1.18.34'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.34'
+
 }
 
 test {
     useTestNG()
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+
+}
+
+
+tasks.register('qa', Test) {
+    useTestNG { suites 'src/test/resources/testng.xml' }
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+
+    systemProperty "browser", project.findProperty("browser") ?: "chrome"
+//    if (project.hasProperty('browser')) {
+//        systemProperty 'browser', "${browser}"
+}
+
+
+tasks.register('scope', Test) {
+    useTestNG {
+        suites file('src/test/resources/scope.xml')
+    }
+
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+
 }

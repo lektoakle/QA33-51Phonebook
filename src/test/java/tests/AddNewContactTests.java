@@ -14,7 +14,7 @@ public class AddNewContactTests extends TestBase {
             .password("aaA1234#")
             .build();
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void precondition() throws InterruptedException {
         if (app.getHelperUser().isLoggedIn()) {
             app.getHelperUser().logOut();
@@ -24,7 +24,7 @@ public class AddNewContactTests extends TestBase {
 
     }
 
-    @Test
+    @Test(groups = "smoke")
     public void AddNewContactAllFieldsPositiveTest() {
         Random random = new Random();
         int i = random.nextInt(1000) + 1000;
@@ -69,7 +69,7 @@ public class AddNewContactTests extends TestBase {
 
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void AddNewContactEmptyNameFieldNegativeTest() {
         Random random = new Random();
         int i = random.nextInt(1000) + 1000;

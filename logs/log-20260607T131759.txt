@@ -1,0 +1,6 @@
+2864 INFO  manager.ApplicationManager -- All tests run in Chrome browser
+4191 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+4542 INFO  tests.TestBase -- Test name: AddNewContactAllFieldsPositiveTest
+10321 INFO  tests.TestBase -- Test data: Contact(name=Emma, lastName=Smith, email=emma1065@gmail.com, phone=452234662370134, address=F, description=F)
+11629 INFO  manager.HelperBase -- tried to open new contact form
+14679 INFO  manager.ApplicationManager -- All tests run in Chrome browser

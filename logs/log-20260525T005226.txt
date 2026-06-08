@@ -1,3 +1,0 @@
-4742 INFO  manager.ApplicationManager -- All tests run in Chrome browser
-5504 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
-5522 INFO  tests.TestBase -- Test name: removeFirstContactTest

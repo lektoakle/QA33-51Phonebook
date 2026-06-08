@@ -13,7 +13,7 @@ public class RemoveContactTests extends TestBase{
             .password("aaA1234#")
             .build();
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void precondition() throws InterruptedException {
         if (app.getHelperUser().isLoggedIn()) {
             app.getHelperUser().logOut();
@@ -29,7 +29,7 @@ public class RemoveContactTests extends TestBase{
 
 
 
-    @Test
+    @Test(groups = {"smoke"})
     public void removeFirstContactTest(){
         app.getHelperContact().openContacts();
         int contactsListSizeBeforeRemoval = app.getHelperContact().getContactsListSize();

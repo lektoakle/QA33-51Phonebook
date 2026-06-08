@@ -1,0 +1,5 @@
+395  INFO  manager.ApplicationManager -- >>> JVM browser = firefox
+399  INFO  manager.ApplicationManager -- >>> constructor browser = firefox
+4935 INFO  manager.ApplicationManager -- All tests run in Firefox browser
+5976 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+6427 INFO  tests.TestBase -- Test name: loginPositiveTest
