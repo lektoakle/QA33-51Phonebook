@@ -31,12 +31,14 @@ public class ApplicationManager {
 
 
     public void init() {
-        if (browser.equals(Browser.CHROME.browserName())){
+        if (browser.equals(Browser.CHROME.browserName())) {
             ChromeOptions options = new ChromeOptions();
 
 //            options.addArguments("--headless=new");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--window-size=1920,1080");
             options.setBinary(System.getenv().getOrDefault(
                     "CHROME_BINARY",
                     "/usr/bin/google-chrome-stable"
@@ -45,20 +47,18 @@ public class ApplicationManager {
             wd = new ChromeDriver(options);
 
             logger.info("All tests run in Chrome browser");
-        } else if (browser.equals(Browser.FIREFOX.browserName())){
+        } else if (browser.equals(Browser.FIREFOX.browserName())) {
             FirefoxOptions options = new FirefoxOptions();
             options.setBinary("/snap/firefox/current/usr/lib/firefox/firefox-bin");
             wd = new FirefoxDriver(options);
             logger.info("All tests run in Firefox browser");
-        } else if (browser.equals(Browser.EDGE.browserName())){
+        } else if (browser.equals(Browser.EDGE.browserName())) {
             wd = new EdgeDriver();
             logger.info("All tests run in Edge browser");
-        }
-        else if (browser.equals(Browser.IE.browserName())){
+        } else if (browser.equals(Browser.IE.browserName())) {
             wd = new InternetExplorerDriver();
             logger.info("All tests run in IE browser");
-        }
-        else if (browser.equals(Browser.SAFARI.browserName())){
+        } else if (browser.equals(Browser.SAFARI.browserName())) {
             wd = new SafariDriver();
             logger.info("All tests run in Safari browser");
         }
@@ -91,8 +91,6 @@ public class ApplicationManager {
     public HelperContact getHelperContact() {
         return helperContact;
     }
-
-
 
 
     ;

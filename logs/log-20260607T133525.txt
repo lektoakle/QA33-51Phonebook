@@ -1,6 +1,0 @@
-2788 INFO  manager.ApplicationManager -- All tests run in Chrome browser
-4008 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
-4350 INFO  tests.TestBase -- Test name: AddNewContactAllFieldsPositiveTest
-10067 INFO  manager.ApplicationManager -- All tests run in Chrome browser
-11165 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
-11216 INFO  tests.TestBase -- Test name: AddNewContactEmptyEmailFieldsNegativeTest

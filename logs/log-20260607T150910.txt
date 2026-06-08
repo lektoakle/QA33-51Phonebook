@@ -1,6 +1,0 @@
-493  INFO  manager.ApplicationManager -- >>> JVM browser = null
-496  INFO  manager.ApplicationManager -- >>> constructor browser = chrome
-8662 INFO  manager.ApplicationManager -- All tests run in Chrome browser
-10119 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
-10484 INFO  tests.TestBase -- Test name: AddNewContactAllFieldsPositiveTest
-12955 INFO  manager.ApplicationManager -- All tests run in Chrome browser

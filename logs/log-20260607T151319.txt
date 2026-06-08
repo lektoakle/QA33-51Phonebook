@@ -1,6 +1,0 @@
-386  INFO  manager.ApplicationManager -- >>> JVM browser = null
-390  INFO  manager.ApplicationManager -- >>> constructor browser = chrome
-2953 INFO  manager.ApplicationManager -- All tests run in Chrome browser
-5511 INFO  tests.TestBase -- Test name: AddNewContactAllFieldsPositiveTest
-7407 INFO  manager.ApplicationManager -- All tests run in Chrome browser
-9336 INFO  tests.TestBase -- Test name: AddNewContactEmptyEmailFieldsNegativeTest
