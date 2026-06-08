@@ -2,6 +2,7 @@ package manager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -32,7 +33,14 @@ public class ApplicationManager {
 
     public void init() {
         if (browser.equals(Browser.CHROME.browserName())){
-            wd = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--remote-allow-origins=*");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--window-size=1920,1080");
+            wd = new ChromeDriver(options);
+
             logger.info("All tests run in Chrome browser");
         } else if (browser.equals(Browser.FIREFOX.browserName())){
             FirefoxOptions options = new FirefoxOptions();
