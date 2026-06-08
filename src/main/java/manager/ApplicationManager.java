@@ -25,20 +25,23 @@ public class ApplicationManager {
     String browser;
 
     public ApplicationManager(String browser) {
-        logger.info(">>> JVM browser = " + System.getProperty("browser"));
-        logger.info(">>> constructor browser = " + browser);
         this.browser = browser;
+
     }
 
 
     public void init() {
         if (browser.equals(Browser.CHROME.browserName())){
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--remote-allow-origins=*");
+
+//            options.addArguments("--headless=new");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--disable-gpu");
-            options.addArguments("--window-size=1920,1080");
+            options.setBinary(System.getenv().getOrDefault(
+                    "CHROME_BINARY",
+                    "/usr/bin/google-chrome-stable"
+            ));
+
             wd = new ChromeDriver(options);
 
             logger.info("All tests run in Chrome browser");
