@@ -28,6 +28,7 @@ test {
     useTestNG()
     if (project.hasProperty('browser')) {
         systemProperty 'browser', "${browser}"
+        systemProperty "headless", project.findProperty("headless") ?: "false"
     }
 
 }
@@ -37,7 +38,7 @@ tasks.register('qa', Test) {
     useTestNG { suites 'src/test/resources/testng.xml' }
     testClassesDirs = sourceSets.test.output.classesDirs
     classpath = sourceSets.test.runtimeClasspath
-
+    systemProperty "headless", project.findProperty("headless") ?: "false"
     systemProperty "browser", project.findProperty("browser") ?: "chrome"
 //    if (project.hasProperty('browser')) {
 //        systemProperty 'browser', "${browser}"
@@ -48,7 +49,7 @@ tasks.register('scope', Test) {
     useTestNG {
         suites file('src/test/resources/scope.xml')
     }
-
+    systemProperty "headless", project.findProperty("headless") ?: "false"
     testClassesDirs = sourceSets.test.output.classesDirs
     classpath = sourceSets.test.runtimeClasspath
 

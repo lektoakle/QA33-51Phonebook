@@ -33,16 +33,17 @@ public class ApplicationManager {
     public void init() {
         if (browser.equals(Browser.CHROME.browserName())) {
             ChromeOptions options = new ChromeOptions();
+            String headless = System.getProperty("headless");
 
-//            options.addArguments("--headless=new");
+            if ("true".equalsIgnoreCase(headless)) {
+                options.addArguments("--headless=new");
+            }
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--disable-gpu");
             options.addArguments("--window-size=1920,1080");
-            options.setBinary(System.getenv().getOrDefault(
-                    "CHROME_BINARY",
-                    "/usr/bin/google-chrome-stable"
-            ));
+            options.setBinary("/path/to/chrome-linux64/chrome");
+            System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 
             wd = new ChromeDriver(options);
 

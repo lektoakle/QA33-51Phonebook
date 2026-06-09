@@ -1,0 +1,5 @@
+7042 INFO  manager.ApplicationManager -- All tests run in Chrome browser
+7896 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+8208 INFO  tests.TestBase -- Test name: loginPositiveTest
+13225 INFO  tests.TestBase -- Test data: models.User@6137cf6e
+15033 INFO  tests.TestBase -- End
