@@ -42,10 +42,10 @@ public class ApplicationManager {
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--disable-gpu");
             options.addArguments("--window-size=1920,1080");
-            options.addArguments("--remote-debugging-port=0");
-            options.addArguments("--user-data-dir=/tmp/chrome-" + System.nanoTime());
             options.addArguments("--disable-features=UseOzonePlatform");
-            options.setBinary("/home/no-u/idea-2025.3.1.1/idea-IU-253.29346.240/bin/chrome-linux64/chrome");
+            options.addArguments("--disable-features=VizDisplayCompositor");
+            options.addArguments("--user-data-dir=/tmp/chrome-" + System.nanoTime());
+            options.setBinary("/opt/chrome/chrome-linux64/chrome");
             System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 
             wd = new ChromeDriver(options);
