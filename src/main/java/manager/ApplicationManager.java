@@ -42,7 +42,7 @@ public class ApplicationManager {
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--disable-gpu");
             options.addArguments("--window-size=1920,1080");
-            options.setBinary("/path/to/chrome-linux64/chrome");
+            options.setBinary("/home/no-u/idea-2025.3.1.1/idea-IU-253.29346.240/bin/chrome-linux64/chrome");
             System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 
             wd = new ChromeDriver(options);
