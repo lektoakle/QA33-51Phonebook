@@ -44,9 +44,10 @@ public class ApplicationManager {
             options.addArguments("--window-size=1920,1080");
             options.addArguments("--disable-features=UseOzonePlatform");
             options.addArguments("--disable-features=VizDisplayCompositor");
-            options.addArguments("--user-data-dir=/tmp/chrome-" + System.nanoTime());
             options.setBinary("/opt/chrome/chrome-linux64/chrome");
             System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+            System.setProperty("webdriver.chrome.verboseLogging", "true");
+            System.setProperty("webdriver.chrome.logfile", "/tmp/chromedriver.log");
 
             wd = new ChromeDriver(options);
 
