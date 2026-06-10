@@ -33,17 +33,21 @@ public class ApplicationManager {
     public void init() {
         if (browser.equals(Browser.CHROME.browserName())) {
             ChromeOptions options = new ChromeOptions();
-            String headless = System.getProperty("headless");
-
-            if ("true".equalsIgnoreCase(headless)) {
-                options.addArguments("--headless=new");
-            }
+//            String headless = System.getProperty("headless");
+//
+//            if ("true".equalsIgnoreCase(headless)) {
+//                options.addArguments("--headless=new");
+//            }
+            options.addArguments("--headless=new");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--disable-gpu");
             options.addArguments("--window-size=1920,1080");
+
             options.addArguments("--disable-features=UseOzonePlatform");
             options.addArguments("--disable-features=VizDisplayCompositor");
+
+            options.addArguments("--user-data-dir=/tmp/chrome-jenkins");
             options.setBinary("/opt/chrome/chrome-linux64/chrome");
             System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
             System.setProperty("webdriver.chrome.verboseLogging", "true");
