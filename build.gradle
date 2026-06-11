@@ -26,10 +26,8 @@ dependencies {
 
 test {
     useTestNG()
-    if (project.hasProperty('browser')) {
-        systemProperty 'browser', "${browser}"
-        systemProperty "headless", project.findProperty("headless") ?: "false"
-    }
+    systemProperty "headless", project.findProperty("headless") ?: "false"
+}
 
 }
 
@@ -50,6 +48,7 @@ tasks.register('scope', Test) {
         suites file('src/test/resources/scope.xml')
     }
     systemProperty "headless", project.findProperty("headless") ?: "false"
+    systemProperty "browser", project.findProperty("browser") ?: "chrome"
     testClassesDirs = sourceSets.test.output.classesDirs
     classpath = sourceSets.test.runtimeClasspath
 
