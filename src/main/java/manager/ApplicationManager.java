@@ -58,7 +58,8 @@ public class ApplicationManager {
             logger.info("All tests run in Chrome browser");
         } else if (browser.equals(Browser.FIREFOX.browserName())) {
             FirefoxOptions options = new FirefoxOptions();
-            options.setBinary("/snap/firefox/current/usr/lib/firefox/firefox-bin");
+            options.setBinary("/opt/firefox/firefox");
+            options.addArguments("--headless");
             wd = new FirefoxDriver(options);
             logger.info("All tests run in Firefox browser");
         } else if (browser.equals(Browser.EDGE.browserName())) {
