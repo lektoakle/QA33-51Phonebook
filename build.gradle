@@ -29,7 +29,7 @@ test {
     systemProperty "headless", project.findProperty("headless") ?: "false"
 }
 
-}
+
 
 
 tasks.register('qa', Test) {
