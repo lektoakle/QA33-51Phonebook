@@ -71,7 +71,6 @@ public class ApplicationManager {
 //            options.addArguments("--headless=new");
 //            options.addArguments("--no-sandbox");
 //            options.addArguments("--disable-gpu");
-            System.setProperty("webdriver.firefox.logfile", "/tmp/geckodriver.log");
             System.setProperty("webdriver.firefox.verboseLogging", "true");
             System.setProperty(
                     "webdriver.gecko.driver",

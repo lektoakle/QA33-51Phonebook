@@ -1,0 +1,30 @@
+10482 INFO  manager.ApplicationManager -- All tests run in Firefox browser
+14609 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+15281 INFO  tests.TestBase -- Test name: loginPositiveTest
+20327 INFO  tests.TestBase -- Test data: models.User@790a251b
+22890 INFO  tests.TestBase -- End
+32610 INFO  manager.ApplicationManager -- All tests run in Firefox browser
+34128 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+34261 INFO  tests.TestBase -- Test name: loginWrongEmail
+39500 INFO  tests.TestBase -- Test data: estuser@test.com, aaA1234#
+50809 INFO  manager.ApplicationManager -- All tests run in Firefox browser
+51758 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+51842 INFO  tests.TestBase -- Test name: AddNewContactAllFieldsPositiveTest
+57517 INFO  tests.TestBase -- Test data: Contact(name=Emma, lastName=Smith, email=emma1367@gmail.com, phone=452234662317247, address=F, description=F)
+58819 INFO  manager.HelperBase -- tried to open new contact form
+75103 INFO  manager.ApplicationManager -- All tests run in Firefox browser
+75934 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+76028 INFO  tests.TestBase -- Test name: AddNewContactEmptyNameFieldNegativeTest
+81629 INFO  tests.TestBase -- Test data: Contact(name=, lastName=Smith, email=emma1679@gmail.com, phone=452234662310559, address=F, description=F)
+83063 INFO  manager.HelperBase -- tried to open new contact form
+96868 INFO  manager.ApplicationManager -- All tests run in Firefox browser
+98298 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+98432 INFO  tests.TestBase -- Test name: testRegistrationPositive
+103484 INFO  tests.TestBase -- Test data: models.User@6b1b19cf
+114273 INFO  manager.ApplicationManager -- All tests run in Firefox browser
+116105 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+116273 INFO  tests.TestBase -- Test name: testRegistrationWrongEmail
+121348 INFO  tests.TestBase -- Test data: models.User@23c767e6
+137921 INFO  manager.ApplicationManager -- All tests run in Firefox browser
+139610 INFO  manager.ApplicationManager -- url:https://telranedu.web.app/home
+139873 INFO  tests.TestBase -- Test name: removeFirstContactTest
